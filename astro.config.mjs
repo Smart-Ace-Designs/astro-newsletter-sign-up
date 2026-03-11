@@ -10,21 +10,17 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
   output: "server",
   adapter: node({
     mode: "standalone",
   }),
-
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Roboto",
-        cssVariable: "--font-roboto",
-        weights: [400, 700],
-        styles: ["normal"],
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Roboto",
+      cssVariable: "--font-roboto",
+      weights: [400, 700],
+      styles: ["normal"],
+    },
+  ],
 });
