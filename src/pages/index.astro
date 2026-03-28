@@ -12,29 +12,17 @@ import MainLayout from "@/layouts/MainLayout.astro";
       id="signup"
     >
       <div class="md:w-1/2">
-        <img
-          src="/illustration-sign-up-mobile.svg"
-          alt="Sign Up"
-          class="md:hidden"
-        />
-        <img
-          src="/illustration-sign-up-desktop.svg"
-          alt="Sign Up"
-          class="hidden md:block"
-        />
+        <img src="/illustration-sign-up-mobile.svg" alt="Sign Up" class="md:hidden" />
+        <img src="/illustration-sign-up-desktop.svg" alt="Sign Up" class="hidden md:block" />
       </div>
       <section class="mx-7 my-7 md:w-1/2 md:px-8">
-        <h1
-          class="mb-3 text-[2.5rem] font-bold text-theme-dark-slate-gray md:text-[3.5rem]"
-        >
+        <h1 class="mb-3 text-[2.5rem] font-bold text-theme-dark-slate-gray md:text-[3.5rem]">
           Stay updated!
         </h1>
         <p class="mb-7 text-theme-dark-slate-gray">
           Join 60,000+ product managers receiving monthly updates on:
         </p>
-        <div
-          class="items-top mb-10 grid grid-cols-[10%_90%] gap-2 text-theme-dark-slate-gray"
-        >
+        <div class="items-top mb-10 grid grid-cols-[10%_90%] gap-2 text-theme-dark-slate-gray">
           <img src="/icon-list.svg" alt="Checkmark" />
           <p>Product discovery and building what matters</p>
           <img src="/icon-list.svg" alt="Checkmark" />
@@ -45,16 +33,13 @@ import MainLayout from "@/layouts/MainLayout.astro";
         <form novalidate id="form">
           <div class="mb-6 flex flex-col">
             <div class="flex justify-between">
-              <label
-                for="email"
-                class="mb-3 text-xs font-bold text-theme-dark-slate-gray"
+              <label for="email" class="mb-3 text-xs font-bold text-theme-dark-slate-gray"
                 >Email address</label
               >
               <label
                 id="errormessage"
                 for="email"
-                class="mb-3 hidden text-xs font-bold text-theme-tomato"
-                >Valid email required</label
+                class="mb-3 hidden text-xs font-bold text-theme-tomato">Valid email required</label
               >
             </div>
             <input
@@ -87,12 +72,11 @@ import MainLayout from "@/layouts/MainLayout.astro";
             Thanks for subscribing!
           </h2>
           <p class="mb-[17.3rem] text-theme-dark-slate-gray md:mb-12">
-            A confirmation email has been sent to <span
-              id="emailresponse"
-              class="font-bold"></span>. Please open it and click the button
-            inside to confirm your subscription
+            A confirmation email has been sent to <span id="emailresponse" class="font-bold"
+            ></span>. Please open it and click the button inside to confirm your subscription
           </p>
           <button
+            type="button"
             id="dismiss"
             class="h-14 w-full rounded-lg border bg-theme-dark-slate-gray text-theme-white hover:border-none hover:bg-linear-to-l hover:from-theme-tomato hover:to-rose-400 hover:text-theme-white hover:shadow-lg hover:shadow-rose-300"
             >Dismiss message</button
@@ -109,14 +93,10 @@ import MainLayout from "@/layouts/MainLayout.astro";
   let errorState: boolean = false;
 
   const form = document.getElementById("form") as HTMLFormElement;
-  const errorLabel = document.getElementById(
-    "errormessage",
-  ) as HTMLLabelElement;
+  const errorLabel = document.getElementById("errormessage") as HTMLLabelElement;
   const email = document.getElementById("email") as HTMLInputElement;
   const signup = document.getElementById("signup") as HTMLDivElement;
-  const confirmation = document.getElementById(
-    "confirmation",
-  ) as HTMLDivElement;
+  const confirmation = document.getElementById("confirmation") as HTMLDivElement;
   const dismiss = document.getElementById("dismiss") as HTMLButtonElement;
 
   email?.addEventListener("focus", () => {
@@ -138,8 +118,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
     const { data } = await actions.newsletter(formData);
 
     if (data) {
-      (document.getElementById("emailresponse") as HTMLSpanElement).innerHTML =
-        email.value;
+      (document.getElementById("emailresponse") as HTMLSpanElement).innerHTML = email.value;
       signup.classList.add("hidden");
       signup.classList.remove("md:flex");
       confirmation.classList.add("md:flex");
@@ -148,11 +127,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 
     errorState = true;
     errorLabel.classList.remove("hidden");
-    email.classList.add(
-      "bg-theme-tomato-transparent",
-      "text-theme-tomato",
-      "border-theme-tomato",
-    );
+    email.classList.add("bg-theme-tomato-transparent", "text-theme-tomato", "border-theme-tomato");
   });
 
   dismiss?.addEventListener("click", () => {
