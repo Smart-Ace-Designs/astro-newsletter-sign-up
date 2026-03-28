@@ -3,7 +3,7 @@ import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import node from "@astrojs/node";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,9 +11,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: netlify(),
   fonts: [
     {
       provider: fontProviders.google(),
