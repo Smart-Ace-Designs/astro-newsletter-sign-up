@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/netlify": "7.0.6",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "6.1.4",
+    "astro": "6.1.5",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
