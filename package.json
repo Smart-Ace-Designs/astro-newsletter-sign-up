@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@astrojs/netlify": "7.0.13",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "6.4.6",
-    "tailwindcss": "^4.3.0"
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "6.4.8",
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "prettier": "^3.8.4",
